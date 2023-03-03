@@ -1,0 +1,27 @@
+<div mat-dialog-title>
+    <h2 *ngIf="!data.info">CREAR PRODUCTO</h2>
+    <h2 *ngIf="data.info">EDITAR PRODUCTO</h2>
+</div>
+<mat-dialog-content>
+    <form [formGroup]="form">
+        <mat-form-field class="ancho" appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="nombre">
+            <mat-error>Debe ingresar el nombre*</mat-error>
+          </mat-form-field>
+          <mat-form-field class="ancho" appearance="outline">
+            <mat-label>Descripcion</mat-label>
+            <input matInput formControlName="descripcion">
+            <mat-error>Debe ingresar la descripcion*</mat-error>
+          </mat-form-field>
+          <mat-form-field class="ancho" appearance="outline">
+            <mat-label>Precio</mat-label>
+            <input matInput formControlName="precio" type="number">
+            <mat-error>Debe ingresar el precio*</mat-error>
+          </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-raised-button type="button" color="secondary" (click)="close()">Cerrar</button>
+    <button mat-raised-button type="button" color="primary" (click)="submit()">Guardar</button>
+</mat-dialog-actions>

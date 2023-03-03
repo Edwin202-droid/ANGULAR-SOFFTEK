@@ -11,13 +11,15 @@ import { NavBarComponent } from '../../components/nav-bar/nav-bar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorModule } from "@angular/material/paginator";
+import { ProductosComponent } from './productos/productos.component';
 
 @NgModule({
   declarations: [
     DashboardComponent,
     NotasComponent,
     RepresentantesComponent,
-    EmpresasComponent
+    EmpresasComponent,
+    ProductosComponent,
   ],
   imports: [
     CommonModule,
