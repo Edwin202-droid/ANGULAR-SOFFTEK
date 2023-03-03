@@ -12,6 +12,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorModule } from "@angular/material/paginator";
 import { ProductosComponent } from './productos/productos.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { ProductosComponent } from './productos/productos.component';
     NavBarComponent,
     MatToolbarModule,
     MatDialogModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatGridListModule,
+    MatCardModule
   ]
 })
 export class DashboardModule { }

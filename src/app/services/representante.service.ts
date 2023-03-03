@@ -24,6 +24,17 @@ export class RepresentanteService {
         );
   }
 
+  getRepresentantes(empresaId:string):Observable<RepresentanteResponse[]>{
+    return this.http.get<RepresentanteResponse[]>(
+      this.apiUrl+'/GetRepresentantes', 
+      {
+        params: {
+          empresaId
+        }
+      }
+    )
+  }
+
   gestionRepresentante(representante:RepresentanteRequest):Observable<any>{
     return this.http.post<any>(
       this.apiUrl+'/GestionRepresentante',
