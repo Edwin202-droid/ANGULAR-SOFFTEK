@@ -3,28 +3,39 @@
     <div class="login">
         <img [src]="logo" alt="" width="50%" height="80%">
         <h1 class="h3 mb-3 fw-normal">Registro</h1>
-        <mat-form-field class="ancho" appearance="outline">
+        <form [formGroup]="form">
+          <mat-form-field class="ancho" appearance="outline">
             <mat-label>Nombres</mat-label>
-            <input matInput>
+            <input matInput formControlName="nombres">
+            <mat-error>Debe ingresar nombres*</mat-error>
+
           </mat-form-field>
           <mat-form-field class="ancho" appearance="outline">
-            <mat-label>Telefono</mat-label>
-            <input matInput>
+            <mat-label>Apelldios</mat-label>
+            <input matInput formControlName="apellidos">
+            <mat-error>Debe ingresar apellidos*</mat-error>
+
           </mat-form-field>
           <mat-form-field class="ancho" appearance="outline">
             <mat-label>DNI</mat-label>
-            <input matInput>
+            <input matInput formControlName="dni">
+            <mat-error>Debe ingresar dni*</mat-error>
+
           </mat-form-field>
           <mat-form-field class="ancho" appearance="outline">
             <mat-label>Correo</mat-label>
-            <input matInput>
+            <input matInput formControlName="email">
+            <mat-error>Debe ingresar correo*</mat-error>
+
           </mat-form-field>
           <mat-form-field class="ancho" appearance="outline">
             <mat-label>Contraseña</mat-label>
-            <input matInput type="password">
+            <input matInput type="password" formControlName="password">
+            <mat-error>Debe ingresar contraseña*</mat-error>
           </mat-form-field>
+        </form>
           <br>
-          <button class="ancho" mat-raised-button mat-button color="primary">Registrarse</button>
+          <button class="ancho" mat-raised-button mat-button color="primary" (click)="register()">Registrarse</button>
           <p>o</p>
           <button class="ancho" mat-raised-button mat-button color="accent" routerLink="/login">Login</button>
     </div>

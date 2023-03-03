@@ -8,7 +8,7 @@
     <button mat-button routerLink="/dashboard/productos">Productos</button>
 
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon" routerLink="/" aria-label="Example icon-button with menu icon">
+    <button mat-icon-button class="example-icon" (click)="authService.logOut()">
       <mat-icon>logout</mat-icon>
     </button>
   </mat-toolbar>

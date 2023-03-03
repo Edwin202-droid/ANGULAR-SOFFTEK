@@ -14,6 +14,8 @@ import { MatPaginatorModule } from "@angular/material/paginator";
 import { ProductosComponent } from './productos/productos.component';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InterceptorService } from '../../services/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,13 @@ import {MatCardModule} from '@angular/material/card';
     MatPaginatorModule,
     MatGridListModule,
     MatCardModule
+  ],
+  providers:[
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
+    }
   ]
 })
 export class DashboardModule { }

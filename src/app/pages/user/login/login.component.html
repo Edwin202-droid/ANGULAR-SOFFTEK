@@ -3,16 +3,21 @@
     <div class="login">
         <img [src]="logo" alt="" width="50%" height="80%">
         <h1 class="h3 mb-3 fw-normal">Login</h1>
-        <mat-form-field class="ancho" appearance="outline">
-            <mat-label>Usuario</mat-label>
-            <input matInput>
-          </mat-form-field>
+        <form [formGroup]="form">
           <mat-form-field class="ancho" appearance="outline">
-            <mat-label>Contraseña</mat-label>
-            <input matInput>
-          </mat-form-field>
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email">
+              <mat-error>Campo requerido*</mat-error>
+            </mat-form-field>
+            <mat-form-field class="ancho" appearance="outline">
+              <mat-label>Contraseña</mat-label>
+              <input matInput formControlName="password" type="password">
+              <mat-error>Campo requerido*</mat-error>
+            </mat-form-field>
+
+        </form>
           <br>
-          <button class="ancho" mat-raised-button mat-button color="primary" routerLink="/dashboard">Ingresar</button>
+          <button class="ancho" mat-raised-button mat-button color="primary" (click)="login()">Ingresar</button>
           <p>o</p>
           <button class="ancho" mat-raised-button mat-button color="accent" routerLink="/registro">Registrarse</button>
 
