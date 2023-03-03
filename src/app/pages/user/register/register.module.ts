@@ -7,6 +7,7 @@ import { RegisterComponent } from './register.component';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
+import { SharedModule } from '../../../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -15,9 +16,7 @@ import { MatButtonModule } from "@angular/material/button";
   imports: [
     CommonModule,
     RegisterRoutingModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule
+    SharedModule
   ]
 })
 export class RegisterModule { }

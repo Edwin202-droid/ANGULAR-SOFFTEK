@@ -1,0 +1,35 @@
+<div mat-dialog-title>
+    <h2 *ngIf="!data.info">CREAR REPRESENTANTE</h2>
+    <h2 *ngIf="data.info">EDITAR REPRESENTANTE</h2>
+</div>
+<mat-dialog-content>
+    <form [formGroup]="form">
+        <mat-form-field class="ancho" appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="nombre">
+            <mat-error>Debe ingresar el nombre*</mat-error>
+          </mat-form-field>
+          <mat-form-field class="ancho" appearance="outline">
+            <mat-label>DNI</mat-label>
+            <input matInput formControlName="numeroDocumento">
+            <mat-error>Debe ingresar el DNI*</mat-error>
+          </mat-form-field>
+          <mat-form-field class="ancho" appearance="outline">
+            <mat-label>Telefono</mat-label>
+            <input matInput formControlName="telefono">
+            <mat-error>Debe ingresar el teléfono*</mat-error>
+          </mat-form-field>
+          <mat-form-field class="ancho" appearance="outline">
+            <mat-label>Empresas</mat-label>
+            <mat-select formControlName="empresaId">
+                <mat-option value = "">(SELECCIONE)</mat-option> 
+                <mat-option *ngFor="let empresa of empresas$ | async" [value]="empresa.empresaId">{{empresa.nombre}}</mat-option>
+            </mat-select>
+            <mat-error>Debe ingresar el teléfono*</mat-error>
+          </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-raised-button type="button" color="secondary" (click)="close()">Cerrar</button>
+    <button mat-raised-button type="button" color="primary" (click)="submit()">Guardar</button>
+</mat-dialog-actions>
