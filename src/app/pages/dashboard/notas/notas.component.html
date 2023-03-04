@@ -8,12 +8,12 @@
       </mat-toolbar>
 
 
-      <mat-grid-list cols="4" rowHeight="2:1">
+      <mat-grid-list cols="4" rowHeight="5:3" style="margin-top: 10px;">
         <mat-grid-tile *ngFor="let nota of notas">
             <mat-card class="mat-elevation-z8">
                 <mat-card-header>
-                    <mat-card-title>COTIZACION PARA : {{nota.nombreEmpresa}}</mat-card-title>
-                    <mat-card-subtitle>NOTA ATENDIDA POR: {{nota.nombreRepresentante}}</mat-card-subtitle>
+                    <mat-card-title>NOTA PARA : {{nota.nombreEmpresa}}</mat-card-title>
+                    <mat-card-subtitle>ATENDIDO POR: {{nota.nombreRepresentante}}</mat-card-subtitle>
                 </mat-card-header>
                 <mat-card-content>
                     <p>{{nota.descripcion}}</p>

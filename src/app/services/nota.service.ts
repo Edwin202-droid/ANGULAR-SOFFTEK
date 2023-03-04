@@ -17,15 +17,22 @@ export class NotaService {
 
 
   getNotas():Observable<NotaResponse[]>{
+    let id = localStorage.getItem('UserId') as string
     return this.http.get<NotaResponse[]>(
-      this.apiUrl+'/GetNotas'
+      this.apiUrl+'/api/Nota/GetNotas/'+id
     )
   }
 
   CreateNota(nota:NotaRequest):Observable<any>{
+
+    const req: NotaRequest = {
+			...nota,
+			usuarioId: localStorage.getItem('UserId') as string,
+		};
+
     return this.http.post<any>(
-      this.apiUrl+'/CreateNota',
-      nota
+      this.apiUrl+'/api/Nota/CreateNota',
+      req
     ).pipe(
       map((resp) => {
         this.snackBar.open(resp.mensaje, undefined, {

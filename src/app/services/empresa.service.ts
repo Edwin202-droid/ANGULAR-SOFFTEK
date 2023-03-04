@@ -18,19 +18,19 @@ export class EmpresaService {
 
   getEmpresaPaginado(request:RequestPaginado):Observable<HttpResponse<EmpresaResponse[]>>{
     return this.http.post<EmpresaResponse[]>(
-        this.apiUrl+'/EmpresaPaginado', 
+        this.apiUrl+'/api/Empresa/EmpresaPaginado', 
         request, 
         { observe : 'response'}
         );
   }
 
   getEmpresas():Observable<EmpresaResponse[]>{
-    return this.http.get<EmpresaResponse[]>(this.apiUrl+'/GetEmpresas');
+    return this.http.get<EmpresaResponse[]>(this.apiUrl+'/api/Empresa/GetEmpresas');
   }
 
   gestionEmpresa(empresa:EmpresaRequest):Observable<any>{
     return this.http.post<any>(
-      this.apiUrl+'/GestionEmpresa',
+      this.apiUrl+'/api/Empresa/GestionEmpresa',
       empresa
     ).pipe(
       map((resp) => {

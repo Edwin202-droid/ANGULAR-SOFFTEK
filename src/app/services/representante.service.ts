@@ -18,7 +18,7 @@ export class RepresentanteService {
 
   getRepresentantePaginado(request:RequestPaginado):Observable<HttpResponse<RepresentanteResponse[]>>{
     return this.http.post<RepresentanteResponse[]>(
-        this.apiUrl+'/RepresentantePaginado', 
+        this.apiUrl+'/api/Representante/RepresentantePaginado', 
         request, 
         { observe : 'response'}
         );
@@ -26,7 +26,7 @@ export class RepresentanteService {
 
   getRepresentantes(empresaId:string):Observable<RepresentanteResponse[]>{
     return this.http.get<RepresentanteResponse[]>(
-      this.apiUrl+'/GetRepresentantes', 
+      this.apiUrl+'/api/Representante/GetRepresentantes', 
       {
         params: {
           empresaId
@@ -37,7 +37,7 @@ export class RepresentanteService {
 
   gestionRepresentante(representante:RepresentanteRequest):Observable<any>{
     return this.http.post<any>(
-      this.apiUrl+'/GestionRepresentante',
+      this.apiUrl+'/api/Representante/GestionRepresentante',
       representante
     ).pipe(
       map((resp) => {

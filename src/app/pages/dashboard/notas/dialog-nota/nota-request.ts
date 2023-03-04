@@ -6,6 +6,7 @@ export class NotaRequest{
 
     detalles?: ProductoResponse[];
     total?:number;
+    usuarioId?:string;
     constructor(){
         this.descripcion = "";
         this.empresaId = "";

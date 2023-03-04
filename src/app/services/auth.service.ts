@@ -32,7 +32,7 @@ export class AuthService {
     return this.http.post<UserResult>(this.apiUrl+'/GestionUsuario', usuario).pipe(
       map((resp:UserResult) =>{
         localStorage.setItem('BearerToken',resp?.token);
-        localStorage.setItem('Nombres',resp?.nombres);
+        localStorage.setItem('UserId',resp?.userId);
         this.token = resp.token;
         this.snackBar.open(resp.message, undefined, {
           panelClass: ['bg-success', 'text-white'],
@@ -61,7 +61,7 @@ export class AuthService {
     return this.http.post<UserResult>(this.apiUrl+'/Login', usuario).pipe(
       map((resp:UserResult) =>{
         localStorage.setItem('BearerToken',resp?.token);
-        localStorage.setItem('Nombres',resp?.nombres);
+        localStorage.setItem('UserId',resp?.userId);
         this.token = resp.token;
         this.snackBar.open(resp.message, undefined, {
           panelClass: ['bg-success', 'text-white'],

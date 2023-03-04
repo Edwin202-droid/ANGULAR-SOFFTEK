@@ -18,7 +18,7 @@ export class ProductoService {
 
   getProductoPaginado(request:RequestPaginado):Observable<HttpResponse<ProductoResponse[]>>{
     return this.http.post<ProductoResponse[]>(
-        this.apiUrl+'/ProductoPaginado', 
+        this.apiUrl+'/api/Producto/ProductoPaginado', 
         request, 
         { observe : 'response'}
         );
@@ -26,7 +26,7 @@ export class ProductoService {
 
   gestionProducto(producto:ProductoRequest):Observable<any>{
     return this.http.post<any>(
-      this.apiUrl+'/GestionProducto',
+      this.apiUrl+'/api/Producto/GestionProducto',
       producto
     ).pipe(
       map((resp) => {
