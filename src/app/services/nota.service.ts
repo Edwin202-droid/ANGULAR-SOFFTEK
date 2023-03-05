@@ -6,6 +6,7 @@ import { NotaRequest } from '../pages/dashboard/notas/dialog-nota/nota-request';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { NotaResponse } from '../pages/dashboard/notas/nota-response';
+import { NotaForIdResponse } from '../pages/dashboard/notas/nota/nota-response';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,12 @@ export class NotaService {
     let id = localStorage.getItem('UserId') as string
     return this.http.get<NotaResponse[]>(
       this.apiUrl+'/api/Nota/GetNotas/'+id
+    )
+  }
+
+  getNota(id:string):Observable<NotaForIdResponse>{
+    return this.http.get<NotaForIdResponse>(
+      this.apiUrl+'/api/Nota/GetNotaForId/'+id
     )
   }
 

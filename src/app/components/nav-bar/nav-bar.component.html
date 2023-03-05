@@ -2,7 +2,7 @@
 <mat-toolbar color="primary">
     <span>SOFFTEK-PRUEBA</span>
     <span class="example-spacer"></span>
-    <button mat-button routerLink="/dashboard">Mis notas</button>
+    <button mat-button routerLink="/dashboard" [matBadge]="cantidadNotas" matBadgePosition="after" matBadgeColor="accent">Mis notas</button>
     <button mat-button routerLink="/dashboard/empresas">Empresas</button>
     <button mat-button routerLink="/dashboard/representantes">Representantes</button>
     <button mat-button routerLink="/dashboard/productos">Productos</button>

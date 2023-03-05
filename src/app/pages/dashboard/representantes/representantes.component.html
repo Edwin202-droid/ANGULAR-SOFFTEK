@@ -49,6 +49,9 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-    <mat-paginator #paginator [length]="length" [pageSize]="pageSize"
+    <div *ngIf="dataSource.data.length == 0" align="center" style="margin-top: 10px !important;">
+        <H1>No hay representantes registrados</H1>
+    </div>
+    <mat-paginator *ngIf="dataSource.data.length > 0" #paginator [length]="length" [pageSize]="pageSize"
         (page)="pageEvent = paginate($event)" class="mat-elevation-z8"></mat-paginator>
 </div>

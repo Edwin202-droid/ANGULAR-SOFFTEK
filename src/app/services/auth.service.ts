@@ -80,6 +80,9 @@ export class AuthService {
   logOut(){
 
     localStorage.removeItem('BearerToken');
+    localStorage.removeItem('UserId');
+    localStorage.removeItem('CantidadNotas');
+
     this.token = "";
     this.router.navigate(['/login']);
   }

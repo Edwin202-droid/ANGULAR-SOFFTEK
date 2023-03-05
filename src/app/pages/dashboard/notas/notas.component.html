@@ -8,7 +8,11 @@
       </mat-toolbar>
 
 
-      <mat-grid-list cols="4" rowHeight="5:3" style="margin-top: 10px;">
+      <div *ngIf="notas.length == 0" class="sinelementos">
+        <h1>Actualmente no tiene notas de ventas</h1>
+      </div>
+
+      <mat-grid-list *ngIf="notas.length > 0" cols="4" rowHeight="5:3" style="margin-top: 10px;">
         <mat-grid-tile *ngFor="let nota of notas">
             <mat-card class="mat-elevation-z8">
                 <mat-card-header>
@@ -22,7 +26,7 @@
                     </span>
                 </mat-card-content>
                 <mat-card-actions align="end">
-                    <button mat-raised-button type="button" color="primary">Atender</button>
+                    <button mat-raised-button type="button" color="primary" [routerLink]="[nota.notaId]">Atender</button>
                 </mat-card-actions>
             </mat-card>
         </mat-grid-tile>

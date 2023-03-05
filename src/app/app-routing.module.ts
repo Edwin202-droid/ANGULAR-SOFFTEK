@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'dashboard', 
     loadChildren: () => import('./pages/dashboard/dashboard.module').then(x => x.DashboardModule),
     canActivate: [LoginGuard] 
+  },
+  {
+    path: '**',
+    redirectTo: 'dashboard'
   }
 ];
 

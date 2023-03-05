@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogNotaComponent } from './dialog-nota/dialog-nota.component';
 import { NotaService } from '../../../services/nota.service';
 import { NotaResponse } from './nota-response';
+import { NotaHeaderService } from './notas-header.service';
 
 @Component({
   selector: 'app-notas',
@@ -13,7 +14,7 @@ export class NotasComponent {
 
   notas : NotaResponse[]=[];
 
-  constructor(private dialog: MatDialog, public notaService: NotaService){
+  constructor(private dialog: MatDialog, public notaService: NotaService, public notaHeaderService: NotaHeaderService){
     
   }
 
@@ -24,6 +25,7 @@ export class NotasComponent {
   getNotas(){
     this.notaService.getNotas().subscribe(notas =>{
       this.notas = notas;
+      this.notaHeaderService.sendMessage(this.notas.length);
     });
   }
 

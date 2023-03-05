@@ -5,6 +5,7 @@ import { NotasComponent } from './notas/notas.component';
 import { EmpresasComponent } from './empresas/empresas.component';
 import { RepresentantesComponent } from './representantes/representantes.component';
 import { ProductosComponent } from './productos/productos.component';
+import { NotaComponent } from './notas/nota/nota.component';
 
 const routes: Routes = [
   {
@@ -13,7 +14,7 @@ const routes: Routes = [
       { path: 'empresas', component: EmpresasComponent },
       { path: 'representantes', component: RepresentantesComponent },
       { path: 'productos', component: ProductosComponent },
-
+      { path: ':id', component: NotaComponent },
     ]
   }
 ];

@@ -17,8 +17,8 @@ export class RegisterComponent {
     nombres: new FormControl<string>('',[Validators.required]),
     apellidos: new FormControl<string>('',[Validators.required]),
     dni: new FormControl<string>('',[Validators.required]),
-    email : new FormControl<string>('',[Validators.required]),
-    password: new FormControl<string>('',[Validators.required]),
+    email : new FormControl<string>('',[Validators.required, Validators.email]),
+    password: new FormControl<string>('',[Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{1,}')]),
   });
 
   constructor(public fb: FormBuilder, public authService: AuthService,public router: Router){

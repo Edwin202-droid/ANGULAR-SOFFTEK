@@ -1,4 +1,5 @@
 export class NotaResponse{
+    notaId?:string;
     descripcion:string;
     total:number;
     nombreEmpresa:string;
